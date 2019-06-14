@@ -168,7 +168,7 @@ App = {
         var processId = parseInt($(event.target).data('id'));
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
-            return instance.harvestItem(
+            return instance.fishItem(
                 App.upc, 
                 App.metamaskAccountID, 
                 App.originFisherName, 
