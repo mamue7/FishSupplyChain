@@ -1,5 +1,22 @@
+Contract Addresses:
+
 FisherRole: 0xd0D54BFde477A15dF67525C0C9a44786cf3A12B7
 DistributorRole: 0xbA5bc0B3De1Df76002e13D331Ed9a86F1B784523
 RetailerRole: 0x9e3C29Fa9914369C09dc0a3a4396c090F8BcA2F6
 ConsumerRole: 0x660E4899332F93281aa77ADF0c61c23878eF32eB
 SupplyChain: 0x943B00d0C76EC4CCBa9e0d6c872287f2881cB956
+
+Libraries:
+Mocha & truffle-assertions for testing
+
+Version: 
+1.0
+
+Node version:
+v10.10.0
+
+Truffle version:
+v5.0.21
+
+Web3.js version:
+v1.0.0-beta.37
