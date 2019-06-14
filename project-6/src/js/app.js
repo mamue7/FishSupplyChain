@@ -6,11 +6,11 @@ App = {
     upc: 0,
     metamaskAccountID: "0x0000000000000000000000000000000000000000",
     ownerID: "0x0000000000000000000000000000000000000000",
-    originFarmerID: "0x0000000000000000000000000000000000000000",
-    originFarmName: null,
-    originFarmInformation: null,
-    originFarmLatitude: null,
-    originFarmLongitude: null,
+    originFishererID: "0x0000000000000000000000000000000000000000",
+    originFisherName: null,
+    originFisherInformation: null,
+    originFisherLatitude: null,
+    originFisherLongitude: null,
     productNotes: null,
     productPrice: 0,
     distributorID: "0x0000000000000000000000000000000000000000",
@@ -27,11 +27,11 @@ App = {
         App.sku = $("#sku").val();
         App.upc = $("#upc").val();
         App.ownerID = $("#ownerID").val();
-        App.originFarmerID = $("#originFarmerID").val();
-        App.originFarmName = $("#originFarmName").val();
-        App.originFarmInformation = $("#originFarmInformation").val();
-        App.originFarmLatitude = $("#originFarmLatitude").val();
-        App.originFarmLongitude = $("#originFarmLongitude").val();
+        App.originFishererID = $("#originFishererID").val();
+        App.originFisherName = $("#originFisherName").val();
+        App.originFisherInformation = $("#originFisherInformation").val();
+        App.originFisherLatitude = $("#originFisherLatitude").val();
+        App.originFisherLongitude = $("#originFisherLongitude").val();
         App.productNotes = $("#productNotes").val();
         App.productPrice = $("#productPrice").val();
         App.distributorID = $("#distributorID").val();
@@ -42,11 +42,11 @@ App = {
             App.sku,
             App.upc,
             App.ownerID, 
-            App.originFarmerID, 
-            App.originFarmName, 
-            App.originFarmInformation, 
-            App.originFarmLatitude, 
-            App.originFarmLongitude, 
+            App.originFishererID, 
+            App.originFisherName, 
+            App.originFisherInformation, 
+            App.originFisherLatitude, 
+            App.originFisherLongitude, 
             App.productNotes, 
             App.productPrice, 
             App.distributorID, 
@@ -131,7 +131,7 @@ App = {
 
         switch(processId) {
             case 1:
-                return await App.harvestItem(event);
+                return await App.fishItem(event);
                 break;
             case 2:
                 return await App.processItem(event);
@@ -163,7 +163,7 @@ App = {
             }
     },
 
-    harvestItem: function(event) {
+    fishItem: function(event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
 
@@ -171,15 +171,15 @@ App = {
             return instance.harvestItem(
                 App.upc, 
                 App.metamaskAccountID, 
-                App.originFarmName, 
-                App.originFarmInformation, 
-                App.originFarmLatitude, 
-                App.originFarmLongitude, 
+                App.originFisherName, 
+                App.originFisherInformation, 
+                App.originFisherLatitude, 
+                App.originFisherLongitude, 
                 App.productNotes
             );
         }).then(function(result) {
             $("#ftc-item").text(result);
-            console.log('harvestItem',result);
+            console.log('fishItem',result);
         }).catch(function(err) {
             console.log(err.message);
         });
